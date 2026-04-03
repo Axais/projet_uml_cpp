@@ -31,7 +31,7 @@ class GenerateurSave
         void ouvrir_contacteur_AC();
         void deconnecter();
         void mef();
-        void charger();
+        void charger(int numero_client);
         
 };
 

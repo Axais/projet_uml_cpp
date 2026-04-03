@@ -9,7 +9,7 @@
 
 class Voyants; 
 class Timer;  
-class GenerateurSave;
+class GenerateurSave; 
 
 class LecteurCarte
 {
@@ -25,6 +25,7 @@ class LecteurCarte
     
 	void initialiser();
 	void lire_carte();
+    void ajouter_client(); // NOUVELLE FONCTION DECLARÉE ICI
 };
 
 #endif // LECTEURCARTE_H

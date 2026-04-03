@@ -48,11 +48,7 @@ int main()
             lecteurcarte.lire_carte();
             std::cout << "[Simulation Lecture de carte...]\n";
         } else if (choix == 2) {
-            std::string p, n, id;
-            std::cout << "Prenom: "; std::cin >> p;
-            std::cout << "Nom: "; std::cin >> n;
-            std::cout << "ID: "; std::cin >> id;
-            baseClients.nouveauClient(p, n, id);
+            lecteurcarte.ajouter_client();        
         } else if (choix == 0) {
             break;
         }

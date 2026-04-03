@@ -1,6 +1,7 @@
 #include "prise.h"
 
 Prise::Prise(entrees* io) : io(io) {
+    // Initialisation par défaut
     if (io != nullptr) {
         io->led_prise = OFF;
         io->led_trappe = OFF; 
@@ -15,18 +16,14 @@ void Prise::set_prise(led couleur) {
 
 void Prise::verrouiller_trappe() {
     if (io != nullptr) {
-        if (io->led_trappe != VERT) { 
-            std::cout << "Trappe VERROUILLEE\n";
-        }
-        io->led_trappe = VERT; 
+        io->led_trappe = OFF;
+        std::cout << "Trappe VERROUILLEE\n";
     }
 }
 
 void Prise::deverrouiller_trappe() {
     if (io != nullptr) {
-        if (io->led_trappe != OFF) { 
-            std::cout << "Trappe DEVERROUILLEE\n";
-        }
-        io->led_trappe = OFF;
+        io->led_trappe = VERT;
+        std::cout << "Trappe DEVERROUILLEE\n";
     }
 }

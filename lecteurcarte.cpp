@@ -34,12 +34,31 @@ void LecteurCarte::lire_carte()
 
             std::cout << "--> Veuillez retirer votre carte.\n";
             attente_retrait_carte();
-            // ON LANCE LA MEF UNIQUEMENT UNE FOIS LA CARTE RETIRÉE
-            generateur.charger();
+            generateur.charger(numero); 
 
         } else {
             std::cout << "Authentification échouée\n";
             attente_retrait_carte();
         }
     }
+}
+void LecteurCarte::ajouter_client()
+{
+    std::string p, n;
+    std::cout << "\n=== CREATION D'UN NOUVEAU CLIENT ===\n";
+    std::cout << "Prenom : "; 
+    std::cin >> p;
+    std::cout << "Nom : "; 
+    std::cin >> n;
+
+    std::cout << "\n--> Veuillez INSERER la nouvelle carte dans le lecteur...\n";
+    attente_insertion_carte();
+    
+    int numero = lecture_numero_carte();
+    std::cout << "Numero de carte lu : " << numero << "\n";
+    
+    std::cout << "--> Veuillez RETIRER la carte.\n";
+    attente_retrait_carte();
+
+    baseClients.nouveauClient(p, n, std::to_string(numero));
 }

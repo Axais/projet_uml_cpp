@@ -15,14 +15,18 @@ void Prise::set_prise(led couleur) {
 
 void Prise::verrouiller_trappe() {
     if (io != nullptr) {
+        if (io->led_trappe != VERT) { 
+            std::cout << "Trappe VERROUILLEE\n";
+        }
         io->led_trappe = VERT; 
-        std::cout << "Trappe VERROUILLEE\n";
     }
 }
 
 void Prise::deverrouiller_trappe() {
     if (io != nullptr) {
+        if (io->led_trappe != OFF) { 
+            std::cout << "Trappe DEVERROUILLEE\n";
+        }
         io->led_trappe = OFF;
-        std::cout << "Trappe DEVERROUILLEE\n";
     }
 }

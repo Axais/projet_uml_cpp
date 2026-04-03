@@ -34,9 +34,8 @@ void LecteurCarte::lire_carte()
 
             std::cout << "--> Veuillez retirer votre carte.\n";
             attente_retrait_carte();
-
             // ON LANCE LA MEF UNIQUEMENT UNE FOIS LA CARTE RETIRÉE
-            generateur.charger(); 
+            generateur.charger();
 
         } else {
             std::cout << "Authentification échouée\n";

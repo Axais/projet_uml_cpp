@@ -1,3 +1,8 @@
+/**
+ * @file borne.cpp
+ * @brief Point d'entrée principal (Main) du simulateur de borne de recharge.
+ * * Initialise la mémoire partagée et lance le menu principal interactif.
+ */
 #include <iostream>
 #include <limits>
 #include "memoire_borne.h"

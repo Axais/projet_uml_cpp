@@ -1,3 +1,9 @@
+/**
+ * @file lecteurcarte.cpp
+ * @brief Implémentation de la classe LecteurCarte.
+ * * Gère la logique d'attente d'insertion de carte, la lecture,
+ * l'authentification et le lancement du processus de charge.
+ */
 #include "lecteurcarte.h"
 #include "generateur_save.h"
 #include <iostream>

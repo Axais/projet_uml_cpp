@@ -1,3 +1,7 @@
+/**
+ * @file prise.cpp
+ * @brief Implémentation de la classe Prise.
+ */
 #include "prise.h"
 
 Prise::Prise(entrees* io) : io(io) {

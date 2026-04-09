@@ -1,3 +1,7 @@
+/**
+ * @file timer.cpp
+ * @brief Implémentation de la classe Timer.
+ */
 #include "timer.h"
 #include <iostream>
 

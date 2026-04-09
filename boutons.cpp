@@ -1,3 +1,7 @@
+/**
+ * @file boutons.cpp
+ * @brief Implémentation de la classe Boutons.
+ */
 #include "boutons.h"
 
 Boutons::Boutons(entrees* io) : io(io) {}

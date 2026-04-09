@@ -1,3 +1,7 @@
+/**
+ * @file baseclients.cpp
+ * @brief Implémentation de la classe BaseClients.
+ */
 #include "baseclients.h"
 
 BaseClients::BaseClients() {

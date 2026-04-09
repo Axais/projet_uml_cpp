@@ -1,9 +1,14 @@
+/**
+ * @file generateur_save.cpp
+ * @brief Implémentation de la classe GenerateurSave.
+ * * Contient la logique principale de contrôle de charge, d'attente
+ * des signaux de tension et la sécurité d'arrêt (bouton stop).
+ */
 #include "generateur_save.h"
 #include "voyants.h"
 #include "lecteurcarte.h"
 #include <string>
 #include <unistd.h>
-
 
 GenerateurSave::GenerateurSave(entrees* io, Prise& prise, Voyants& voyants)
     : io(io), prise(prise), voyants(voyants) 
@@ -43,6 +48,10 @@ void GenerateurSave::deconnecter() {
     if (io != nullptr) io->gene_pwm = STOP;
 }
 
+/**
+ * @note Implémente la logique d'état des tensions de la norme de charge : 
+ * 12V (Attente), 9V (Connecté), 6V (En charge).
+ */
 void GenerateurSave::mef() {
     float t = tension();
 
@@ -66,6 +75,12 @@ void GenerateurSave::mef() {
         io->led_dispo = OFF;
     }
 }
+
+/**
+ * @note Boucle principale de charge. Surveille le bouton stop et 
+ * la tension pour détecter la fin de charge. Demande une 
+ * re-validation de la carte pour débrancher.
+ */
 void GenerateurSave::charger(int numero_client) { // <-- Ajout du paramètre
     int execution = 1;
     
@@ -117,7 +132,6 @@ void GenerateurSave::charger(int numero_client) { // <-- Ajout du paramètre
     std::cout << "\n--> Veuillez vous identifier avec la MEME carte pour reprendre votre vehicule.\n";
     bool carte_valide = false;
 
-
     while(!carte_valide){
     attente_insertion_carte();
     int numero_lu = lecture_numero_carte();
@@ -135,7 +149,6 @@ void GenerateurSave::charger(int numero_client) { // <-- Ajout du paramètre
         prise.deverrouiller_trappe();
         voyants.set_dispo(); 
     } 
-
 
     }else {
         std::cout << "Carte differente. Veuillez inserer la carte initiale.\n";

@@ -1,3 +1,7 @@
+/**
+ * @file voyants.cpp
+ * @brief Implémentation des méthodes de la classe Voyants.
+ */
 #include "voyants.h"
 #include <iostream>
 #include <unistd.h> // Pour usleep
@@ -8,6 +12,10 @@ Voyants::Voyants(entrees* io) : io(io) {
     }
 }
 
+/**
+ * @note Le clignotement est géré via un modulo sur le timer système, 
+ * avec un délai (usleep) de 100ms.
+ */
 void Voyants::blink_charge() {
     if (io == nullptr) return;
     if (((io->timer_sec - depart_timer_voyants) % 2) == 0) {
@@ -18,6 +26,9 @@ void Voyants::blink_charge() {
     usleep(100000); 
 }
 
+/**
+ * @note Utilise le même principe de modulo que blink_charge().
+ */
 void Voyants::blink_defaut() {
     if (io == nullptr) return;
     if (((io->timer_sec - depart_timer_voyants) % 2) == 0) {

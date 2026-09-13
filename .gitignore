@@ -1,0 +1,9 @@
+# --- Sorties de compilation ---
+*.o
+*.a
+*.so
+borne
+
+# --- Systeme ---
+.DS_Store
+Thumbs.db
